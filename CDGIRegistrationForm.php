@@ -404,41 +404,18 @@
                                 </div>
                         </div>
                     </div>
-
-                    <!-- Admission Branch in Chameli Devi Group -->
-                    <div id="CDGAdmittedInfo">
-                        <!-- Management Course opted i.e Admission in CDIPS(Chameli Devi Institute of Professional Studies) -->
-                        <div class="form-group">
-                            <label for="PSBranch">Professional Studies Course</label>
-                            <select class="form-control" id="PSBranch">
-                                <option>MBA</option>
-                                <option>BBA</option>
-                                <option>B.Sc (Computer)</option>
-                                <option>B.Com (Computer)</option>
-                            </select>
-                        </div>
-
-                        <!-- Engineering Branch admitted to i.e Admission in CDGI(Chameli Devi Group of Institutes) -->
-                        <div class="form-group">
-                            <label for="engineeringBranch">Engineering Branch</label>
-                            <select class="form-control" id="engineeringBranch">
-                                <option>Computer Science (CS)</option>
-                                <option>Informaton Technology (IT)</option>
-                                <option>Civil (CE)</option>
-                                <option>Mechanical (ME)</option>
-                                <option>Electronics and Communication (EC)</option>
-                                <option>Electrical (EE)</option>
-                            </select>
-                        </div>
-
-                        <!-- Pharmacy Course opted i.e Admission in CDIP(Chameli Devi Institute of Pharmacy) -->
-                        <div class="form-group">
-                            <label for="pharmaBranch">Pharmacy Course</label>
-                            <select class="form-control" id="pharmaBranch">
-                                <option>B.Pharma</option>
-                                <option>D.Pharma</option>
-                            </select>
-                        </div>
+                    
+                    <!-- Engineering Branch admitted to i.e Admission in CDGI(Chameli Devi Group of Institutes) -->
+                    <div class="form-group">
+                        <label for="engineeringBranch">Engineering Branch</label>
+                        <select class="form-control" id="engineeringBranch">
+                            <option>Computer Science (CS)</option>
+                            <option>Informaton Technology (IT)</option>
+                            <option>Civil (CE)</option>
+                            <option>Mechanical (ME)</option>
+                            <option>Electronics and Communication (EC)</option>
+                            <option>Electrical (EE)</option>
+                        </select>
                     </div>
 
                 </form>

@@ -212,7 +212,7 @@
                                 <input type="text" class="form-control" id="otherPersonRelation">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Is this person studying in CDGI?</label>
+                                <label for="exampleFormControlInput1">Is this person studying in CDIP?</label>
                                 <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
                                 <div class="form-control" id="otherPersonInCGI">
                                     <div class="form-check form-check-inline pr-2">
@@ -258,7 +258,7 @@
                                 <input type="number" class="form-control" id="sscPercentage" placeholder="00">
                             </div>
                         </div>
-                        <!-- HSC (or Diploma for Engineering i.e. CDGI)-->
+                        <!-- HSC -->
                         <div id="hscInfo">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">School Name (12th Class)</label>
@@ -286,161 +286,17 @@
                                 <label for="exampleFormControlInput1">12th Board Marks(in Percentage)</label>
                                 <input type="number" class="form-control" id="hscPercentage" placeholder="00">
                             </div>
-                        </div>
-                        <!-- Diploma(If applicable) (for Engineering i.e. CDGI)-->
-                        <div id="diplomaInfo">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Diploma</label>
-                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
-                                <div class="form-control" id="diploma">
-                                    <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                    </div>
-                                    <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                        <label class="form-check-label" for="inlineRadio2">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- If Diploma is yes -->
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">College Name (Diploma)</label>
-                                    <input type="text" class="form-control" id="diplomaCollege">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Diploma Board</label>
-                                    <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
-                                    <div class="form-control" id="diplomaBoard">
-                                        <div class="form-check form-check-inline pr-2">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                            <label class="form-check-label" for="inlineRadio1">CBSE</label>
-                                        </div>
-                                        <div class="form-check form-check-inline pr-3">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                            <label class="form-check-label" for="inlineRadio2">MP</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                            <label class="form-check-label" for="inlineRadio3">Others</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Diploma Marks(in Percentage)</label>
-                                    <input type="number" class="form-control" id="diplomaPercentage" placeholder="00">
-                                </div>
-                                <!-- <div class="form-group">
-                                    <label for="exampleFormControlInput1">Branch</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                    <div class="form-control" id="diplomaBranch">
-                                        <div class="form-check form-check-inline pr-2">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                            <label class="form-check-label" for="inlineRadio1">CSE</label>
-                                        </div>
-                                        <div class="form-check form-check-inline pr-3">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                            <label class="form-check-label" for="inlineRadio2">IT</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                            <label class="form-check-label" for="inlineRadio3">CE</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                            <label class="form-check-label" for="inlineRadio3">ME</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                            <label class="form-check-label" for="inlineRadio3">EC</label>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- Single selection diploma branch -->
-                                <div class="form-group">
-                                    <label for="diplomaBranch">Diploma Branch</label>
-                                    <select class="form-control" id="diplomaBranch">
-                                        <option>Computer Science (CS)</option>
-                                        <option>Informaton Technology (IT)</option>
-                                        <option>Civil (CE)</option>
-                                        <option>Mechanical (ME)</option>
-                                        <option>Electronics and Communication (EC)</option>
-                                        <option>Electrical (EE)</option>
-                                    </select>
-                                </div>
-                                <!-- (If Diploma branch is min 3 selection) -->
-                                <!-- <div class="form-group">
-                                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                                    <select multiple class="form-control" id="diplomaBranch">
-                                        <option>CSE</option>
-                                        <option>IT</option>
-                                        <option>CE</option>
-                                        <option>ME</option>
-                                        <option>EC</option>
-                                    </select>
-                                </div> -->
                         </div>    
-
-                        <!-- IIT JEE (for Engineering i.e. CDGI)-->
-                        <div id="iitJeeInfo">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">IIT JEE appeared?</label>
-                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
-                                <div class="form-control" id="iitJee">
-                                    <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                    </div>
-                                    <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                        <label class="form-check-label" for="inlineRadio2">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- If IIT JEE is yes -->
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">IIT JEE Marks</label>
-                                    <input type="number" class="form-control" id="iitJeeMarks" placeholder="000">
-                                </div>
-                        </div>
                     </div>
 
-                    <!-- Admission Branch in Chameli Devi Group -->
-                    <div id="CDGAdmittedInfo">
-                        <!-- Management Course opted i.e Admission in CDIPS(Chameli Devi Institute of Professional Studies) -->
-                        <div class="form-group">
-                            <label for="PSBranch">Professional Studies Course</label>
-                            <select class="form-control" id="PSBranch">
-                                <option>MBA</option>
-                                <option>BBA</option>
-                                <option>B.Sc (Computer)</option>
-                                <option>B.Com (Computer)</option>
-                            </select>
-                        </div>
-
-                        <!-- Engineering Branch admitted to i.e Admission in CDGI(Chameli Devi Group of Institutes) -->
-                        <div class="form-group">
-                            <label for="engineeringBranch">Engineering Branch</label>
-                            <select class="form-control" id="engineeringBranch">
-                                <option>Computer Science (CS)</option>
-                                <option>Informaton Technology (IT)</option>
-                                <option>Civil (CE)</option>
-                                <option>Mechanical (ME)</option>
-                                <option>Electronics and Communication (EC)</option>
-                                <option>Electrical (EE)</option>
-                            </select>
-                        </div>
-
-                        <!-- Pharmacy Course opted i.e Admission in CDIP(Chameli Devi Institute of Pharmacy) -->
-                        <div class="form-group">
-                            <label for="pharmaBranch">Pharmacy Course</label>
-                            <select class="form-control" id="pharmaBranch">
-                                <option>B.Pharma</option>
-                                <option>D.Pharma</option>
-                            </select>
-                        </div>
-                    </div>
-
+                    <!-- Pharmacy Course opted i.e Admission in CDIP(Chameli Devi Institute of Pharmacy) -->
+                    <div class="form-group">
+                        <label for="pharmaBranch">Pharmacy Course</label>
+                        <select class="form-control" id="pharmaBranch">
+                            <option>B.Pharma</option>
+                            <option>D.Pharma</option>
+                        </select>
+                    </div>        
                 </form>
             </div>
         </div>
