@@ -1,0 +1,188 @@
+registration_id
+first_name
+middle_name
+last_name
+mother_maiden_name
+date_of_birth
+gender
+student_email
+student_mobile_number
+student_alternate_number
+category
+physically_challenged
+aadhar_number
+samagraha_id
+father_name
+father_mobile_number
+occupation
+annual_income
+mother_name
+mother_mobile_number
+through_agent
+agent_name
+agent_mobile_number
+through_whom
+other_person_name
+other_person_relation
+other_person_same_college
+ssc_school_name
+ssc_board
+ssc_marks
+hsc_school_name
+hsc_board
+hsc_marks
+diploma_done
+diploma_school_name
+diploma_board
+diploma_marks
+diploma_branch
+iit_jee_appeared
+iit_jee_marks
+current_course
+
+
+
+
+
+
+
+INSERT INTO `cdips_students`(
+    `registration_id`,
+    `first_name`,
+    `middle_name`,
+    `last_name`,
+    `mother_maiden_name`,
+    `date_of_birth`,
+    `gender`,
+    `student_email`,
+    `student_mobile-number`,
+    `student_alternate-number`,
+    `category`,
+    `physically_challenged`,
+    `aadhar_number`,
+    `samagraha_id`,
+    `father_name`,
+    `father_mobile_number`,
+    `occupation`,
+    `annual_income`,
+    `mother_name`,
+    `mother_mobile_number`,
+    `through_agent`,
+    `agent_name`,
+    `agent_mobile_number`,
+    `through_whom`,
+    `other_person_name`,
+    `other_person_relation`,
+    `other_person_same_college`,
+    `ssc_school_name`,
+    `ssc_board`,
+    `ssc_marks`,
+    `hsc_school_name`,
+    `hsc_board`,
+    `hsc_marks`,
+    `current_course`
+)
+VALUES(
+    [
+VALUE
+    -1 ],
+    [
+VALUE
+    -2 ],
+    [
+VALUE
+    -3 ],
+    [
+VALUE
+    -4 ],
+    [
+VALUE
+    -5 ],
+    [
+VALUE
+    -6 ],
+    [
+VALUE
+    -7 ],
+    [
+VALUE
+    -8 ],
+    [
+VALUE
+    -9 ],
+    [
+VALUE
+    -10 ],
+    [
+VALUE
+    -11 ],
+    [
+VALUE
+    -12 ],
+    [
+VALUE
+    -13 ],
+    [
+VALUE
+    -14 ],
+    [
+VALUE
+    -15 ],
+    [
+VALUE
+    -16 ],
+    [
+VALUE
+    -17 ],
+    [
+VALUE
+    -18 ],
+    [
+VALUE
+    -19 ],
+    [
+VALUE
+    -20 ],
+    [
+VALUE
+    -21 ],
+    [
+VALUE
+    -22 ],
+    [
+VALUE
+    -23 ],
+    [
+VALUE
+    -24 ],
+    [
+VALUE
+    -25 ],
+    [
+VALUE
+    -26 ],
+    [
+VALUE
+    -27 ],
+    [
+VALUE
+    -28 ],
+    [
+VALUE
+    -29 ],
+    [
+VALUE
+    -30 ],
+    [
+VALUE
+    -31 ],
+    [
+VALUE
+    -32 ],
+    [
+VALUE
+    -33 ],
+    [
+VALUE
+    -34 ]
+)

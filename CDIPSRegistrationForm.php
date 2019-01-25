@@ -1,3 +1,4 @@
+<?php include('server.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,49 +17,49 @@
         <div class="card">
             <h5 class="card-header text-center">Register</h5>
             <div class="card-body">
-                <form>
+                <form method="post" action="server.php">
                     <!-- Personal Information -->
                     <div id="personalInfo">
                         <!-- Student Basic Information -->
                         <div id="studentBasicInfo">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Student Registration Id</label>
-                                <input type="text" class="form-control" id="studentId" placeholder="YOP_BRANCH_AUTOINCREMENTNUM">
+                                <label for="studentId">Student Registration Id</label>
+                                <input type="text" name="registration_id" class="form-control" id="studentId" placeholder="" disabled value="CDIPS_AUTOINCREMENT">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">First Name</label>
-                                <input type="text" class="form-control" id="studentFirstName" placeholder="Harsha">
+                                <label for="studentFirstName">First Name</label>
+                                <input type="text" name="first_name" class="form-control" id="studentFirstName" placeholder="Harsha">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Middle Name</label>
-                                <input type="text" class="form-control" id="studentMiddleName" placeholder="Deepak">
+                                <input type="text" name="middle_name" class="form-control" id="studentMiddleName" placeholder="Deepak">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Last Name</label>
-                                <input type="text" class="form-control" id="studentLastName" placeholder="Jadhwani">
+                                <input type="text" name="last_name" class="form-control" id="studentLastName" placeholder="Jadhwani">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Mother's Maiden Name</label>
-                                <input type="text" class="form-control" id="studentMotherName" placeholder="Meena">
+                                <input type="text" name="mother_maiden_name" class="form-control" id="studentMotherName" placeholder="Meena">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Date of Birth</label>
-                                <input type="date" class="form-control" id="studentDOB" placeholder="mm/dd/yyyy">
+                                <input type="date" name="date_of_birth" class="form-control" id="studentDOB" placeholder="mm/dd/yyyy">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Gender</label>
                                 <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
-                                <div class="form-control" id="studentGender">
+                                <div class="form-control" name="gender" id="studentGender">
                                     <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Female">
                                         <label class="form-check-label" for="inlineRadio1">Female</label>
                                     </div>
                                     <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Male">
                                         <label class="form-check-label" for="inlineRadio2">Male</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Others">
                                         <label class="form-check-label" for="inlineRadio3">Others</label>
                                     </div>
                                 </div>
@@ -69,34 +70,34 @@
                         <div id="studentContactInfo">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="studentEmail" placeholder="name@example.com">
+                                <input type="email" name="student_email" class="form-control" id="studentEmail" placeholder="name@example.com">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Student's Mobile Number</label>
-                                <input type="number" class="form-control" id="studentPhone" placeholder="0000000000">
+                                <input type="number" name="student_mobile_number" class="form-control" id="studentPhone" placeholder="0000000000">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Alternate Mobile Number</label>
-                                <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
+                                <input type="number" name="student_alternate_number" class="form-control" id="studentPhone2" placeholder="0000000000">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Category</label>
                                 <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
-                                <div class="form-control" id="studentCategory">
+                                <div class="form-control" name="category" id="studentCategory">
                                     <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="option1">
                                         <label class="form-check-label" for="inlineRadio1">General</label>
                                     </div>
                                     <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio2" value="option2">
                                         <label class="form-check-label" for="inlineRadio2">OBC</label>
                                     </div>
                                     <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="option3">
                                         <label class="form-check-label" for="inlineRadio3">SC</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="option3">
                                         <label class="form-check-label" for="inlineRadio3">ST</label>
                                     </div>
                                 </div>
@@ -108,7 +109,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Physically Challenged</label>
                                 <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
-                                <div class="form-control" id="studentPC">
+                                <div class="form-control" name="physically_challenged" id="studentPC">
                                     <div class="form-check form-check-inline pr-2">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -121,11 +122,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Aadhar Number</label>
-                                <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
+                                <input type="number" name="aadhar_number" class="form-control" id="studentPhone2" placeholder="0000000000">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Samagraha ID</label>
-                                <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
+                                <input type="number" name="samagraha_id" class="form-control" id="studentPhone2" placeholder="0000000000">
                             </div>
                         </div>
                     </div>
@@ -311,7 +312,7 @@
                             <input type="password" class="form-control" id="confirmPassword" placeholder="Password">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="registerCDIPS">Register</button>
                 </form>
             </div>
         </div>
