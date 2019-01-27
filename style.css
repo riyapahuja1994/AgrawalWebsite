@@ -1,0 +1,11 @@
+.header-bg-color {
+  background-color: navy;
+  color: #fff;
+}
+.card-body-border-top {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.align-middle-custom.table thead th {
+  vertical-align: middle;
+}

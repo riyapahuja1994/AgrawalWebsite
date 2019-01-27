@@ -3,7 +3,7 @@
 <body>
     <div class="container mt-5">
         <div class="card">
-            <h5 class="card-header text-center header-bg-color">CDIPS Student Registration</h5>
+            <h5 class="card-header text-center header-bg-color">CDIP Student Registration</h5>
             <div class="card-body">
                 <form method="post" action="server.php">
                     <!-- Personal Information -->
@@ -272,12 +272,10 @@
             
                     <!-- For Management Course opted i.e Admission in CDIPS(Chameli Devi Institute of Professional Studies) -->
                     <div class="form-group">
-                        <label for="PSBranch">Professional Studies Course</label>
-                        <select class="form-control" name="current_course" id="PSBranch">
-                            <option>MBA</option>
-                            <option>BBA</option>
-                            <option>B.Sc (Computer)</option>
-                            <option>B.Com (Computer)</option>
+                        <label for="PSBranch">Pharmacy Course</label>
+                        <select class="form-control" name="current_course" id="pharmaCourse">
+                            <option>B.Pharma</option>
+                            <option>D.Pharma</option>
                         </select>
                     </div>
 
@@ -285,14 +283,14 @@
                     <div id="passwordInfo">
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label for="confirmPassword">Confirm Password</label>
-                            <input type="password" name="confirm_password" class="form-control" id="confirmPassword" placeholder="Password">
+                            <input type="password" class="form-control" name="confirm_password" id="confirmPassword" placeholder="Password">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="registerCDIPS">Register</button>
+                    <button type="submit" class="btn btn-primary" name="registerCDIP">Register</button>
                 </form>
             </div>
         </div>
