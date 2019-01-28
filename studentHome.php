@@ -28,7 +28,9 @@
                             <img class="card-img-top pl-5 pr-5 pt-2 pb-0" src="img/cdgi-logo.png" alt="Card image cap">
                             <div class="card-body card-body-border-top">
                                 <!-- <p class="card-text"></p> -->
-                                <a href="CDGIRegistrationForm.php" class="btn btn-primary">View Data</a>
+                                <form action="login.php" method="post">
+                                    <button type='submit' class="btn btn-primary" name="viewCdgiData">View Data</button>
+                                </form>
                             </div>
                             </div>
                         </div>
@@ -40,7 +42,9 @@
                             <img class="card-img-top pl-5 pr-5 pt-2 pb-0" src="img/cdip-logo.jpg" alt="Card image cap">
                             <div class="card-body card-body-border-top">
                                 <!-- <p class="card-text"></p> -->
-                                <a href="CDIPRegistrationForm.php" class="btn btn-primary">View Data</a>
+                                <form action="login.php" method="post">
+                                    <button type='submit' class="btn btn-primary" name="viewCdipData">View Data</button>
+                                </form>
                             </div>
                             </div>
                         </div>
@@ -52,7 +56,9 @@
                             <img class="card-img-top pl-5 pr-5 pt-2 pb-0" src="img/cdips-logo1.jpg" alt="Card image cap">
                             <div class="card-body card-body-border-top">
                                 <!-- <p class="card-text"></p> -->
-                                <a href="CDIPSRegistrationForm.php" class="btn btn-primary">View Data</a>
+                                <form action="login.php" method="post">
+                                    <button type='submit' class="btn btn-primary" name="viewCdipsData">View Data</button>
+                                </form>
                             </div>
                             </div>
                         </div>

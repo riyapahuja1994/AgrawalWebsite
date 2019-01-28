@@ -1,7 +1,8 @@
 <?php include('index.php');?>
+<?php include('data.php');?>
 <body>
     <div class="container mt-3">
-        <?php if ( have_posts() ) : ?>
+        <?php if ( isset($cdgiData) ) : ?>
             <table class="table table-sm table-bordered text-center align-middle-custom">
                 <thead class="header-bg-color">
                     <tr>
