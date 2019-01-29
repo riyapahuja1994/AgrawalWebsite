@@ -5,7 +5,7 @@
     //Connect to database
     $db = mysqli_connect('localhost', 'root', '', 'agrawal_data');
 
-    //if registerCDIPS is clicked
+    //if login is clicked
     if(isset($_POST['loginAdmin']) || isset($_POST['loginStudent'])){
         
         if(isset($_POST['loginAdmin']))
