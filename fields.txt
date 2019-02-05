@@ -1,5 +1,5 @@
 registration_id
-first_name
+full_name
 middle_name
 last_name
 mother_maiden_name
@@ -48,7 +48,7 @@ current_course
 
 INSERT INTO `cdips_students`(
     `registration_id`,
-    `first_name`,
+    `full_name`,
     `middle_name`,
     `last_name`,
     `mother_maiden_name`,
@@ -197,3 +197,688 @@ VALUE
                      <h1> Oh no </h1>
                 </div>
 <?php endif; ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agrawal Group of Institutes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" src="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <h5 class="card-header text-center">Register</h5>
+            <div class="card-body">
+                <form>
+                    <!-- Personal Information -->
+                    <div id="personalInfo">
+                        <!-- Student Basic Information -->
+                        <div id="studentBasicInfo">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Student Registration Id</label>
+                                <input type="text" class="form-control" id="studentId" placeholder="YOP_BRANCH_AUTOINCREMENTNUM">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">First Name</label>
+                                <input type="text" class="form-control" id="studentFirstName" placeholder="Harsha">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Middle Name</label>
+                                <input type="text" class="form-control" id="studentMiddleName" placeholder="Deepak">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Last Name</label>
+                                <input type="text" class="form-control" id="studentLastName" placeholder="Jadhwani">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Mother's Maiden Name</label>
+                                <input type="text" class="form-control" id="studentMotherName" placeholder="Meena">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Date of Birth</label>
+                                <input type="date" class="form-control" id="studentDOB" placeholder="mm/dd/yyyy">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Gender</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="studentGender">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Female</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Student Contact Information -->
+                        <div id="studentContactInfo">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Email address</label>
+                                <input type="email" class="form-control" id="studentEmail" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Student's Mobile Number</label>
+                                <input type="number" class="form-control" id="studentPhone" placeholder="0000000000">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Alternate Mobile Number</label>
+                                <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Category</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="studentCategory">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">General</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">OBC</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">SC</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">ST</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Student Other Information -->
+                        <div id="studentOtherInfo">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Physically Challenged</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="studentPC">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Aadhar Number</label>
+                                <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Samagraha ID</label>
+                                <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Information -->
+                    <div id="familyInfo">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Father's Name</label>
+                            <input type="text" class="form-control" id="fatherName">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Father's Mobile Number</label>
+                            <input type="number" class="form-control" id="fatherPhone" placeholder="0000000000">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="exampleFormControlInput1">Alternate Mobile Number</label>
+                            <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
+                        </div> -->
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Father's Occupation</label>
+                            <input type="text" class="form-control" id="fatherOccupation" placeholder="Occupation">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Father's Annual Income</label>
+                            <input type="number" class="form-control" id="fatherAnnualIncome" placeholder="0000000000">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Mother's Name</label>
+                            <input type="text" class="form-control" id="motherName">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Mother's Mobile Number</label>
+                            <input type="number" class="form-control" id="motherPhone" placeholder="0000000000">
+                        </div>
+                    </div>
+                    
+                    <!-- Agent, Self or Others Information -->
+                    <div id="agentInfo">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Through Agent</label>
+                            <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                            <div class="form-control" id="throughAgent">
+                                <div class="form-check form-check-inline pr-2">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline pr-3">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If through Agent is yes -->
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Agent's Name</label>
+                                <input type="text" class="form-control" id="agentName">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Agent's Mobile Number</label>
+                                <input type="number" class="form-control" id="agentPhone" placeholder="0000000000">
+                            </div>
+                        <!-- If through agent is no -->
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Through</label>
+                            <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                            <div class="form-control" id="throughWhom">
+                                <div class="form-check form-check-inline pr-2">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Self</label>
+                                </div>
+                                <div class="form-check form-check-inline pr-3">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Others</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If through others -->
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Person's Name</label>
+                                <input type="text" class="form-control" id="otherPersonName">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Relation</label>
+                                <input type="text" class="form-control" id="otherPersonRelation">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Is this person studying in CDGI?</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="otherPersonInCGI">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Education : Earlier School and College information -->
+                    <div id="educationInfo">
+                        <!-- SSC -->
+                        <div id="sscInfo">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">School Name (10th Class)</label>
+                                <input type="text" class="form-control" id="sscSchool">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">10th Board</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="sscBoard">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">CBSE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">MP</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">10th Board Marks(in Percentage)</label>
+                                <input type="number" class="form-control" id="sscPercentage" placeholder="00">
+                            </div>
+                        </div>
+                        <!-- HSC (or Diploma for Engineering i.e. CDGI)-->
+                        <div id="hscInfo">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">School Name (12th Class)</label>
+                                <input type="text" class="form-control" id="hscSchool">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">12th Board</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="hscBoard">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">CBSE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">MP</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">12th Board Marks(in Percentage)</label>
+                                <input type="number" class="form-control" id="hscPercentage" placeholder="00">
+                            </div>
+                        </div>
+                        <!-- Diploma(If applicable) (for Engineering i.e. CDGI)-->
+                        <div id="diplomaInfo">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Diploma</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="diploma">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- If Diploma is yes -->
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">College Name (Diploma)</label>
+                                    <input type="text" class="form-control" id="diplomaCollege">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Diploma Board</label>
+                                    <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                    <div class="form-control" id="diplomaBoard">
+                                        <div class="form-check form-check-inline pr-2">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">CBSE</label>
+                                        </div>
+                                        <div class="form-check form-check-inline pr-3">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">MP</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">Others</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Diploma Marks(in Percentage)</label>
+                                    <input type="number" class="form-control" id="diplomaPercentage" placeholder="00">
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="exampleFormControlInput1">Branch</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    <div class="form-control" id="diplomaBranch">
+                                        <div class="form-check form-check-inline pr-2">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">CSE</label>
+                                        </div>
+                                        <div class="form-check form-check-inline pr-3">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">IT</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">CE</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">ME</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">EC</label>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- Single selection diploma branch -->
+                                <div class="form-group">
+                                    <label for="diplomaBranch">Diploma Branch</label>
+                                    <select class="form-control" id="diplomaBranch">
+                                        <option>Computer Science (CS)</option>
+                                        <option>Informaton Technology (IT)</option>
+                                        <option>Civil (CE)</option>
+                                        <option>Mechanical (ME)</option>
+                                        <option>Electronics and Communication (EC)</option>
+                                        <option>Electrical (EE)</option>
+                                    </select>
+                                </div>
+                                <!-- (If Diploma branch is min 3 selection) -->
+                                <!-- <div class="form-group">
+                                    <label for="exampleFormControlSelect2">Example multiple select</label>
+                                    <select multiple class="form-control" id="diplomaBranch">
+                                        <option>CSE</option>
+                                        <option>IT</option>
+                                        <option>CE</option>
+                                        <option>ME</option>
+                                        <option>EC</option>
+                                    </select>
+                                </div> -->
+                        </div>    
+
+                        <!-- IIT JEE (for Engineering i.e. CDGI)-->
+                        <div id="iitJeeInfo">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">IIT JEE appeared?</label>
+                                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+                                <div class="form-control" id="iitJee">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- If IIT JEE is yes -->
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">IIT JEE Marks</label>
+                                    <input type="number" class="form-control" id="iitJeeMarks" placeholder="000">
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Admission Branch in Chameli Devi Group -->
+                    <div id="CDGAdmittedInfo">
+                        <!-- Management Course opted i.e Admission in CDIPS(Chameli Devi Institute of Professional Studies) -->
+                        <div class="form-group">
+                            <label for="PSBranch">Professional Studies Course</label>
+                            <select class="form-control" id="PSBranch">
+                                <option>MBA</option>
+                                <option>BBA</option>
+                                <option>B.Sc (Computer)</option>
+                                <option>B.Com (Computer)</option>
+                            </select>
+                        </div>
+
+                        <!-- Engineering Branch admitted to i.e Admission in CDGI(Chameli Devi Group of Institutes) -->
+                        <div class="form-group">
+                            <label for="engineeringBranch">Engineering Branch</label>
+                            <select class="form-control" id="engineeringBranch">
+                                <option>Computer Science (CS)</option>
+                                <option>Informaton Technology (IT)</option>
+                                <option>Civil (CE)</option>
+                                <option>Mechanical (ME)</option>
+                                <option>Electronics and Communication (EC)</option>
+                                <option>Electrical (EE)</option>
+                            </select>
+                        </div>
+
+                        <!-- Pharmacy Course opted i.e Admission in CDIP(Chameli Devi Institute of Pharmacy) -->
+                        <div class="form-group">
+                            <label for="pharmaBranch">Pharmacy Course</label>
+                            <select class="form-control" id="pharmaBranch">
+                                <option>B.Pharma</option>
+                                <option>D.Pharma</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div id="passwordInfo">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+//studentHome old
+<?php include('index.php');?>
+<?php include('login.php');?>
+<body>
+    <div>
+        <nav class="navbar navbar-primary pl-5 pr-5 header-bg-color">
+            <!-- <a class="navbar-brand" href="#"> -->
+                <img src="img/cdgi-logo.png" width="100" height="100" class="d-inline-block align-top" alt="CDGI">
+            <!-- </a> -->
+            <div class="d-inline-block text-center">
+                <h2>CHAMELI DEVI GROUP OF INSTITUTIONS</h2>
+                <h4>KHANDWA ROAD, INDORE, MADHYA PRADESH</h4>
+            </div>
+            <img src="img/ag-logo.jpg" width="100" height="100" class="d-inline-block align-top" alt="Agrawal Group">
+        </nav>
+        <?php if(isset($_SESSION['success'])): ?>
+            <div class="container mt-5">
+                <div class="alert alert-success mt-5 mb-5 text-center">
+                    Login Successful.
+                    <?php 
+                        echo $_SESSION['success'];
+                    ?>
+                </div>
+                <div class="row mt-5 mb-4">
+                    <?php if(isset($_SESSION['student_id']) && (strpos($_SESSION['student_id'], 'CDGI') !== false)): ?>
+                        <div class="offset-sm-4 col-sm-4">
+                            <div class="card text-center">
+                            <h5 class="card-header">CDGI</h5>
+                            <img class="card-img-top pl-5 pr-5 pt-2 pb-0" src="img/cdgi-logo.png" alt="Card image cap">
+                            <div class="card-body card-body-border-top">
+                                <!-- <p class="card-text"></p> -->
+                                <form action="studentHome.php" method="post">
+                                    <button type='submit' class="btn btn-primary" name="viewCdgiData">View Data</button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    <?php endif ?>
+                    <?php if(isset($_SESSION['student_id']) && ((strpos($_SESSION['student_id'], 'CDIP') !== false) && !(strpos($_SESSION['student_id'], 'CDIPS') === 0))): ?>
+                        <div class="offset-sm-4 col-sm-4">
+                            <div class="card text-center">
+                            <h5 class="card-header">CDIP</h5>
+                            <img class="card-img-top pl-5 pr-5 pt-2 pb-0" src="img/cdip-logo.jpg" alt="Card image cap">
+                            <div class="card-body card-body-border-top">
+                                <!-- <p class="card-text"></p> -->
+                                <form action="studentHome.php" method="post">
+                                    <button type='submit' class="btn btn-primary" name="viewCdipData">View Data</button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    <?php endif ?>
+                    <?php if(isset($_SESSION['student_id']) && (strpos($_SESSION['student_id'], 'CDIPS') !== false)): ?>
+                        <div class="offset-sm-4 col-sm-4">
+                            <div class="card text-center">
+                            <h5 class="card-header">CDIPS</h5>
+                            <img class="card-img-top pl-5 pr-5 pt-2 pb-0" src="img/cdips-logo1.jpg" alt="Card image cap">
+                            <div class="card-body card-body-border-top">
+                                <!-- <p class="card-text"></p> -->
+                                <form action="studentHome.php" method="post">
+                                    <button type='submit' class="btn btn-primary" name="viewCdipsData">View Data</button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="mb-3">
+                    <?php 
+                        //Connect to database
+                        $db = mysqli_connect('localhost', 'root', '', 'agrawal_data');
+                        // $getDataQueryresult = '';
+                        //if login is clicked
+                        if(isset($_POST['viewCdgiData']) || isset($_POST['viewCdipData']) || isset($_POST['viewCdipsData']) || isset($_POST['viewAllData'])){
+                            //echo "in if";
+                            if(isset($_POST['viewCdgiData'])){
+                                $getDataQuery = "SELECT * FROM cdgi_students";
+                            }
+                            else if(isset($_POST['viewCdipData'])){
+                                $getDataQuery = "SELECT * FROM cdip_students";
+                            }
+                            else if(isset($_POST['viewCdipsData'])){
+                                $getDataQuery = "SELECT * FROM cdips_students";
+                            }
+                            else{
+                                $getDataSQuery = "SELECT * FROM cdgi_students,cdip_students,cdips_students";
+                                // $getCDIPDataQuery = "SELECT * FROM cdip_students";
+                                // $getCDIPSDataQuery = "SELECT * FROM cdips_students";
+                            }
+                            $getDataQueryresult = mysqli_query($db,$getDataQuery);
+                            // // echo "ABC";
+                            //     echo "<pre>"; 
+                            //     print_r($getDataQueryresult);
+                            //     echo "</pre>";
+                            // // echo "ABCPR";
+                            echo '<table class="table-responsive table-sm table-bordered text-center align-middle-custom">
+                                <thead class="header-bg-color">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Registration Id</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Middle Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Mother\'s Maiden Name</th>
+                                        <th scope="col">Date of Birth</th>
+                                        <th scope="col">Gender</th>
+                                        <th scope="col">Email Id</th>
+                                        <th scope="col">Mobile Number</th>
+                                        <th scope="col">Alternate Mobile Number</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Physically Challenged</th>
+                                        <th scope="col">Aadhar Naumber</th>
+                                        <th scope="col">Samagraha Id</th>
+                                        <th scope="col">Father\'s Name</th>
+                                        <th scope="col">Father\'s Mobile Number</th>
+                                        <th scope="col">Occupation</th>
+                                        <th scope="col">Annual Income</th>
+                                        <th scope="col">Mother\'s Name</th>
+                                        <th scope="col">Mother\'s Mobile Number</th>
+                                        <th scope="col">Through Agent</th>
+                                        <th scope="col">Agent Name</th>
+                                        <th scope="col">Agent Mobile Number</th>
+                                        <th scope="col">Through whom</th>
+                                        <th scope="col">Other Person\'s name</th>
+                                        <th scope="col">Other Person\'s Relation</th>
+                                        <th scope="col">Is Other Person\'s in CDGI?</th>
+                                        <th scope="col">SSC School</th>
+                                        <th scope="col">SSC Board</th>
+                                        <th scope="col">SSC Marks(in %)</th>
+                                        <th scope="col">HSC School</th>
+                                        <th scope="col">HSC Board</th>
+                                        <th scope="col">HSC Marks(in %)</th>';
+                                        if(isset($_POST['viewCdgiData'])){
+                                            echo '<th scope="col">Diploma Done</th>
+                                            <th scope="col">Diploma College</th>
+                                            <th scope="col">Diploma Board</th>
+                                            <th scope="col">Diploma Marks</th>
+                                            <th scope="col">Diploma Branch</th>
+                                            <th scope="col">IIT JEE Appeared</th>
+                                            <th scope="col">IIT JEE Marks</th>';
+                                        }
+                                       echo '<th scope="col">Current Course</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                                    while ($row = mysqli_fetch_assoc($getDataQueryresult))
+                                    {
+                                        echo '<tr>';
+                                        echo '<th scope="row">1</th>';
+                                        echo '<td>'.$row['registration_id'].'</td>';
+                                        echo '<td>'.$row['first_name'].'</td>';
+                                        echo '<td>'.$row['middle_name'].'</td>';
+                                        echo '<td>'.$row['last_name'].'</td>';
+                                        echo '<td>'.$row['mother_maiden_name'].'</td>';
+                                        echo '<td>'.$row['date_of_birth'].'</td>';
+                                        echo '<td>'.$row['gender'].'</td>';
+                                        echo '<td>'.$row['student_email'].'</td>';
+                                        echo '<td>'.$row['student_mobile_number'].'</td>';
+                                        echo '<td>'.$row['student_alternate_number'].'</td>';
+                                        echo '<td>'.$row['category'].'</td>';
+                                        echo '<td>'.$row['physically_challenged'].'</td>';
+                                        echo '<td>'.$row['aadhar_number'].'</td>';
+                                        echo '<td>'.$row['samagraha_id'].'</td>';
+                                        echo '<td>'.$row['father_name'].'</td>';
+                                        echo '<td>'.$row['father_mobile_number'].'</td>';
+                                        echo '<td>'.$row['occupation'].'</td>';
+                                        echo '<td>'.$row['annual_income'].'</td>';
+                                        echo '<td>'.$row['mother_name'].'</td>';
+                                        echo '<td>'.$row['mother_mobile_number'].'</td>';
+                                        echo '<td>'.$row['through_agent'].'</td>';
+                                        echo '<td>'.$row['agent_name'].'</td>';
+                                        echo '<td>'.$row['agent_mobile_number'].'</td>';
+                                        echo '<td>'.$row['through_whom'].'</td>';
+                                        echo '<td>'.$row['other_person_name'].'</td>';
+                                        echo '<td>'.$row['other_person_relation'].'</td>';
+                                        echo '<td>'.$row['other_person_same_college'].'</td>';
+                                        echo '<td>'.$row['ssc_school_name'].'</td>';
+                                        echo '<td>'.$row['ssc_board'].'</td>';
+                                        echo '<td>'.$row['ssc_marks'].'</td>';
+                                        echo '<td>'.$row['hsc_school_name'].'</td>';
+                                        echo '<td>'.$row['hsc_board'].'</td>';
+                                        echo '<td>'.$row['hsc_marks'].'</td>';
+                                        if(isset($_POST['viewCdgiData'])){
+                                            echo '<td>'.$row['diploma_done'].'</td>';
+                                            echo '<td>'.$row['diploma_school_name'].'</td>';
+                                            echo '<td>'.$row['diploma_board'].'</td>';
+                                            echo '<td>'.$row['diploma_marks'].'</td>';
+                                            echo '<td>'.$row['diploma_branch'].'</td>';
+                                            echo '<td>'.$row['iit_jee_appeared'].'</td>';
+                                            echo '<td>'.$row['iit_jee_marks'].'</td>';
+                                        }
+                                        echo '<td>'.$row['current_course'].'</td>';
+                                        //echo '<td>Otto</td>';                        
+                                        echo '</tr>';
+                                    }
+                            echo '</tbody>';
+                            echo '</table>';
+                        }
+                    
+                        
+                                /*?php endif; 
+                            <!-- <//?php else: ?>
+                                <div class ="page-header">
+                                    <h1> No data Found </h1>
+                                </div> -->*/
+                    ?>
+                </div>
+            </div>
+        <?php endif ?>
+        <?php if(isset($_SESSION['student_id'])): ?>
+            <form action="login.php" method="get">
+                <div class="row mt-2">
+                    <div class="col-12 text-center">
+                        <button type="submit" name="student_logout" class="btn btn-danger btn-lg mb-3 ">Logout</button>
+                    </div>
+                </div>
+            </form>
+        <?php endif ?>
+    </div>
+</body>

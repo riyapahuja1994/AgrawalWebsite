@@ -12,12 +12,12 @@
             </div>
             <img src="img/ag-logo.jpg" width="100" height="100" class="d-inline-block align-top" alt="Agrawal Group">
         </nav>
-        <?php if(isset($_SESSION['success'])): ?>
+        <?php if(isset($_SESSION['loginsuccess'])): ?>
             <div class="container mt-5">
                 <div class="alert alert-success mt-5 mb-5 text-center">
                     Login Successful.
                     <?php 
-                        echo $_SESSION['success'];
+                        echo $_SESSION['loginsuccess'];
                     ?>
                 </div>
                 <div class="row mt-5 mb-4">
@@ -92,15 +92,11 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Registration Id</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Middle Name</th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">Mother\'s Maiden Name</th>
+                                        <th scope="col">Full Name</th>
                                         <th scope="col">Date of Birth</th>
                                         <th scope="col">Gender</th>
                                         <th scope="col">Email Id</th>
                                         <th scope="col">Mobile Number</th>
-                                        <th scope="col">Alternate Mobile Number</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Physically Challenged</th>
                                         <th scope="col">Aadhar Naumber</th>
@@ -143,15 +139,11 @@
                                         echo '<tr>';
                                         echo '<th scope="row">1</th>';
                                         echo '<td>'.$row['registration_id'].'</td>';
-                                        echo '<td>'.$row['first_name'].'</td>';
-                                        echo '<td>'.$row['middle_name'].'</td>';
-                                        echo '<td>'.$row['last_name'].'</td>';
-                                        echo '<td>'.$row['mother_maiden_name'].'</td>';
+                                        echo '<td>'.$row['full_name'].'</td>';
                                         echo '<td>'.$row['date_of_birth'].'</td>';
                                         echo '<td>'.$row['gender'].'</td>';
                                         echo '<td>'.$row['student_email'].'</td>';
                                         echo '<td>'.$row['student_mobile_number'].'</td>';
-                                        echo '<td>'.$row['student_alternate_number'].'</td>';
                                         echo '<td>'.$row['category'].'</td>';
                                         echo '<td>'.$row['physically_challenged'].'</td>';
                                         echo '<td>'.$row['aadhar_number'].'</td>';
@@ -193,14 +185,13 @@
                                      echo '<tr>';
                                      if(isset($_POST['viewCdgiData'])){
                                         echo '<td colspan="12">No records to be displayed.</td>';
-                                        echo '<td colspan="10">No records to be displayed.</td>';
-                                        echo '<td colspan="10">No records to be displayed.</td>';
-                                        echo '<td colspan="10">No records to be displayed.</td>';
+                                        echo '<td colspan="12">No records to be displayed.</td>';
+                                        echo '<td colspan="13">No records to be displayed.</td>';
                                      }
                                      else{
-                                        echo '<td colspan="12">No records to be displayed.</td>';
+                                        echo '<td colspan="10">No records to be displayed.</td>';
+                                        echo '<td colspan="10">No records to be displayed.</td>';
                                         echo '<td colspan="11">No records to be displayed.</td>';
-                                        echo '<td colspan="12">No records to be displayed.</td>';
                                      }
                                      echo '</tr>';
                                 }

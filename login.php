@@ -15,7 +15,7 @@
             if($adminId == $admin_id && $adminPassword == $admin_password)
             {
                 $_SESSION['admin_id'] = $admin_id;
-                $_SESSION['success'] = "You are logged in as Admin.";
+                $_SESSION['loginsuccess'] = "You are logged in as Admin.";
                 header('location: adminHome.php');
             }
             else{
@@ -51,7 +51,7 @@
                 if(mysqli_num_rows($loginQueryresult) == 1){
                     //Log User in
                     $_SESSION['student_id'] = $studentId;
-                    $_SESSION['success'] = "You are logged in as Student.";
+                    $_SESSION['loginsuccess'] = "You are logged in as Student.";
                     header('location: studentHome.php');
                 }
                 else{
@@ -65,8 +65,7 @@
 
     //logout
     if(isset($_GET['admin_logout']) || isset($_GET['student_logout'])){
-        session_destroy();
-        unset($_SESSION['success']);
+        unset($_SESSION['loginsuccess']);
         if(isset($_GET['admin_logout'])){
             unset($_SESSION['admin_id']);
         }
