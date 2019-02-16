@@ -6,6 +6,11 @@
     $( document ).ready(function() {
         $('input[name="through_agent"]').prop({required:true});
     });
+    function yopMinMax(){
+        var currentYear = (new Date()).getFullYear();
+        $('#sscYop').prop({min:2000,max:(currentYear-2)});
+        $('#hscYop').prop({min:2000,max:currentYear});
+    }
     function isAgentYes(){
         var throughAgent = $('input[name="through_agent"]:checked').val();
         if(throughAgent == "No")
@@ -46,9 +51,9 @@
     <div class="container mt-5">
         <div class="card">
             <h5 class="card-header text-center header-bg-color">CDIPS Student Registration</h5>
-            <div class="card-body">
+            <div class="card-body pl-5 pr-5">
                 <form method="post" action="server.php">
-                    <div class="pb-2 text-danger">Note: All Fields are mandatory except disabled.</div>
+                    <!-- <div class="pb-2 text-danger">Fields marked with * are mandatory.</div> -->
                     <!-- Personal Information -->
                     <div id="personalInfo">
                         <!-- Student Basic Information -->
@@ -76,21 +81,21 @@
                             </div> -->
                             <div class="form-group">
                                 <label for="studentDOB">Date of Birth</label>
-                                <input type="date" name="date_of_birth" class="form-control" id="studentDOB" placeholder="mm/dd/yyyy" required>
+                                <input type="date" name="date_of_birth" class="form-control w-50" id="studentDOB" placeholder="mm/dd/yyyy" required>
                             </div>
                             <div class="form-group">
                                 <label for="studentGender">Gender</label>
                                 <div class="form-control" name="gender" id="studentGender">
                                     <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Female" checked>
+                                        <input class="form-check-input" type="radio" name="gender" id="gender_f" value="Female" checked>
                                         <label class="form-check-label" for="inlineRadio1">Female</label>
                                     </div>
                                     <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Male">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender_m" value="Male">
                                         <label class="form-check-label" for="inlineRadio2">Male</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Others">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender_o" value="Others">
                                         <label class="form-check-label" for="inlineRadio3">Others</label>
                                     </div>
                                 </div>
@@ -105,7 +110,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="studentPhone">Student's Mobile Number</label>
-                                <input type="number" name="student_mobile_number" class="form-control" id="studentPhone" required>
+                                <input type="number" name="student_mobile_number" class="form-control" id="studentPhone" min=1000000000 max=9999999999 required>
                             </div>
                             <!-- <div class="form-group">
                                 <label for="studentPhone2">Alternate Mobile Number</label>
@@ -115,47 +120,115 @@
                                 <label for="studentCategory">Category</label>
                                 <div class="form-control" name="category" id="studentCategory">
                                     <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="General" checked>
-                                        <label class="form-check-label" for="inlineRadio1">General</label>
+                                        <input class="form-check-input" type="radio" name="category" id="category_General" value="General" checked>
+                                        <label class="form-check-label" for="category_General">General</label>
                                     </div>
                                     <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio2" value="OBC">
-                                        <label class="form-check-label" for="inlineRadio2">OBC</label>
+                                        <input class="form-check-input" type="radio" name="category" id="category_OBC" value="OBC">
+                                        <label class="form-check-label" for="category_OBC">OBC</label>
                                     </div>
                                     <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="SC">
-                                        <label class="form-check-label" for="inlineRadio3">SC</label>
+                                        <input class="form-check-input" type="radio" name="category" id="category_SC" value="SC">
+                                        <label class="form-check-label" for="category_SC">SC</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="category" id="inlineRadio3" value="ST">
-                                        <label class="form-check-label" for="inlineRadio3">ST</label>
+                                        <input class="form-check-input" type="radio" name="category" id="category_ST" value="ST">
+                                        <label class="form-check-label" for="category_ST">ST</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentPC">Physically Challenged</label>
+                                <div class="form-control" name="physically_challenged" id="studentPC">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="physically_challenged" id="pc_Y" value="Yes">
+                                        <label class="form-check-label" for="pc_Y">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="physically_challenged" id="pc_N" value="No" checked>
+                                        <label class="form-check-label" for="pc_N">No</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Student Other Information -->
-                        <div id="studentOtherInfo">
+                        <!-- Education : Earlier School and College information -->
+                    <div id="educationInfo">
+                        <!-- SSC -->
+                        <div id="sscInfo">
                             <div class="form-group">
-                                <label for="studentPC">Physically Challenged</label>
-                                <div class="form-control" name="physically_challenged" id="studentPC">
+                                <label for="sscSchool">School Name (10th Class)</label>
+                                <input type="text" name="ssc_school_name" class="form-control" id="sscSchool" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sscBoard">10th Board</label>
+                                <div class="form-control" id="sscBoard">
                                     <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="physically_challenged" id="inlineRadio1" value="Yes">
-                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                        <input class="form-check-input" type="radio" name="ssc_board" id="ssc_board1" value="CBSE" checked>
+                                        <label class="form-check-label" for="ssc_board1">CBSE</label>
                                     </div>
                                     <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="physically_challenged" id="inlineRadio2" value="No" checked>
-                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                        <input class="form-check-input" type="radio" name="ssc_board" id="ssc_board2" value="MP">
+                                        <label class="form-check-label" for="ssc_board2">MP</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="ssc_board" id="ssc_board3" value="Others">
+                                        <label class="form-check-label" for="ssc_board3">Others</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="sscPercentage">10th Board Marks(in Percentage)</label>
+                                <input type="number" name="ssc_marks" class="form-control" id="sscPercentage" placeholder="00" min=0 max=100 required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sscYop">Year of Passing(10th)</label>
+                                <input type="number" name="ssc_yop" class="form-control" id="sscYop" onchange="yopMinMax();" required>
+                            </div>
+                        </div>
+                        <!-- HSC -->
+                        <div id="hscInfo">
+                            <div class="form-group">
+                                <label for="hscSchool">School Name (12th Class)</label>
+                                <input type="text" name="hsc_school_name" class="form-control" id="hscSchool">
+                            </div>
+                            <div class="form-group">
+                                <label for="hscBoard">12th Board</label>
+                                <div class="form-control" id="hscBoard">
+                                    <div class="form-check form-check-inline pr-2">
+                                        <input class="form-check-input" type="radio" name="hsc_board" id="hsc_board1" value="CBSE">
+                                        <label class="form-check-label" for="hsc_board1">CBSE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline pr-3">
+                                        <input class="form-check-input" type="radio" name="hsc_board" id="hsc_board2" value="MP">
+                                        <label class="form-check-label" for="hsc_board2">MP</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="hsc_board" id="hsc_board3" value="Others">
+                                        <label class="form-check-label" for="hsc_board3">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="hscPercentage">12th Board Marks(in Percentage)</label>
+                                <input type="number" name="hsc_marks" class="form-control" id="hscPercentage" placeholder="00" min=0 max=100>
+                            </div>
+                            <div class="form-group">
+                                <label for="hscYop">Year of Passing(12th)</label>
+                                <input type="number" name="hsc_yop" class="form-control" id="hscYop" onchange="yopMinMax();">
+                            </div>
+                        </div>    
+                    </div>
+
+                        <!-- Student Other Information -->
+                        <div id="studentOtherInfo">
+                            <div class="form-group">
                                 <label for="aadharNumber">Aadhar Number</label>
-                                <input type="number" name="aadhar_number" class="form-control" id="aadharNumber" required>
+                                <input type="number" name="aadhar_number" class="form-control" id="aadharNumber" required min=100000000000 max=999999999999>
                             </div>
                             <div class="form-group">
                                 <label for="samagrahaId">Samagraha ID</label>
-                                <input type="number" name="samagraha_id" class="form-control" id="samagrahaId" required>
+                                <input type="number" name="samagraha_id" class="form-control" id="samagrahaId" required min=100000000 max=999999999>
                             </div>
                         </div>
                     </div>
@@ -168,7 +241,7 @@
                         </div>
                         <div class="form-group">
                             <label for="fatherPhone">Father's Mobile Number</label>
-                            <input type="number" name="father_mobile_number" class="form-control" id="fatherPhone" required>
+                            <input type="number" name="father_mobile_number" class="form-control" id="fatherPhone" min=1000000000 max=9999999999 required>
                         </div>
                         <!-- <div class="form-group">
                             <label for="exampleFormControlInput1">Alternate Mobile Number</label>
@@ -176,11 +249,11 @@
                         </div> -->
                         <div class="form-group">
                             <label for="fatherOccupation">Father's Occupation</label>
-                            <input type="text" name="occupation" class="form-control" id="fatherOccupation" required>
+                            <input type="text" name="occupation" class="form-control" id="fatherOccupation">
                         </div>
                         <div class="form-group">
                             <label for="fatherAnnualIncome">Father's Annual Income</label>
-                            <input type="number" name="annual_income" class="form-control" id="fatherAnnualIncome" required>
+                            <input type="number" name="annual_income" class="form-control" id="fatherAnnualIncome">
                         </div>
                         <div class="form-group">
                             <label for="motherName">Mother's Name</label>
@@ -188,7 +261,7 @@
                         </div>
                         <div class="form-group">
                             <label for="motherPhone">Mother's Mobile Number</label>
-                            <input type="number" name="mother_mobile_number" class="form-control" id="motherPhone" required>
+                            <input type="number" name="mother_mobile_number" class="form-control" id="motherPhone" min=1000000000 max=9999999999 required>
                         </div>
                     </div>
                     
@@ -214,7 +287,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="agentPhone">Agent's Mobile Number</label>
-                                <input type="number" name="agent_mobile_number" class="form-control" id="agentPhone" >
+                                <input type="number" name="agent_mobile_number" class="form-control" id="agentPhone" min=1000000000 max=9999999999>
                             </div>
                         <!-- If through agent is no -->
                         <div class="form-group">
@@ -252,66 +325,18 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>
-
-                    <!-- Education : Earlier School and College information -->
-                    <div id="educationInfo">
-                        <!-- SSC -->
-                        <div id="sscInfo">
                             <div class="form-group">
-                                <label for="sscSchool">School Name (10th Class)</label>
-                                <input type="text" name="ssc_school_name" class="form-control" id="sscSchool" required>
+                                <label for="instituteInfoSource">How did you come to know about our Institute?</label>
+                                <select class="form-control" name="institute_info_src" id="instituteInfoSource">
+                                    <option>Electronics(Social Media)</option>
+                                    <option>Newspaper</option>
+                                    <option>Olympiad</option>
+                                    <option>Science Model Camp</option>
+                                    <option>Campus Visit</option>
+                                    <option>CDGI Website</option>
+                                    <option>Others</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <label for="sscBoard">10th Board</label>
-                                <div class="form-control" id="sscBoard">
-                                    <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="ssc_board" id="ssc_board1" value="CBSE" checked>
-                                        <label class="form-check-label" for="ssc_board1">CBSE</label>
-                                    </div>
-                                    <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="ssc_board" id="ssc_board2" value="MP">
-                                        <label class="form-check-label" for="ssc_board2">MP</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ssc_board" id="ssc_board3" value="Others">
-                                        <label class="form-check-label" for="ssc_board3">Others</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="sscPercentage">10th Board Marks(in Percentage)</label>
-                                <input type="number" name="ssc_marks" class="form-control" id="sscPercentage" placeholder="00" required>
-                            </div>
-                        </div>
-                        <!-- HSC -->
-                        <div id="hscInfo">
-                            <div class="form-group">
-                                <label for="hscSchool">School Name (12th Class)</label>
-                                <input type="text" name="hsc_school_name" class="form-control" id="hscSchool" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="hscBoard">12th Board</label>
-                                <div class="form-control" id="hscBoard">
-                                    <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="hsc_board" id="hsc_board1" value="CBSE" checked>
-                                        <label class="form-check-label" for="hsc_board1">CBSE</label>
-                                    </div>
-                                    <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="hsc_board" id="hsc_board2" value="MP">
-                                        <label class="form-check-label" for="hsc_board2">MP</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="hsc_board" id="hsc_board3" value="Others">
-                                        <label class="form-check-label" for="hsc_board3">Others</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="hscPercentage">12th Board Marks(in Percentage)</label>
-                                <input type="number" name="hsc_marks" class="form-control" id="hscPercentage" placeholder="00" required>
-                            </div>
-                        </div>    
                     </div>
             
                     <!-- For Management Course opted i.e Admission in CDIPS(Chameli Devi Institute of Professional Studies) -->

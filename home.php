@@ -4,13 +4,13 @@
     <div>
         <nav class="navbar navbar-primary pl-5 pr-5 header-bg-color">
             <!-- <a class="navbar-brand" href="#"> -->
-                <img src="img/cdgi-logo.png" width="100" height="100" class="d-inline-block align-top" alt="CDGI">
+                <img src="img/ag-logo.jpg" width="100" height="100" class="d-inline-block align-top" alt="CDGI">
             <!-- </a> -->
             <div class="d-inline-block text-center">
                 <h2>CHAMELI DEVI GROUP OF INSTITUTIONS</h2>
                 <h4>KHANDWA ROAD, INDORE, MADHYA PRADESH</h4>
             </div>
-            <img src="img/ag-logo.jpg" width="100" height="100" class="d-inline-block align-top" alt="Agrawal Group">
+            <img src="img/cdgi-logo.png" width="100" height="100" class="d-inline-block align-top" alt="Agrawal Group">
         </nav>
         <div class="container mt-5">
             <div class="row mt-5 mb-5 text-center">
