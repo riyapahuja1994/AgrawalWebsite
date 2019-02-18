@@ -99,7 +99,7 @@
                                 value="<?php if(isset($_GET['registration_id'])) { echo $_GET['registration_id']; } ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="studentFirstName">Full Name</label>
+                                <label for="studentFirstName">Full Name<span class="text-danger">*</span></label>
                                 <input type="text" name="full_name" class="form-control" id="studentFirstName" required>
                             </div>
                             <!-- <div class="form-group">
@@ -115,11 +115,11 @@
                                 <input type="text" name="mother_maiden_name" class="form-control" id="studentMotherName" placeholder="Mee   na">
                             </div> -->
                             <div class="form-group">
-                                <label for="studentDOB">Date of Birth</label>
+                                <label for="studentDOB">Date of Birth<span class="text-danger">*</span></label>
                                 <input type="date" name="date_of_birth" class="form-control w-50" id="studentDOB" placeholder="mm/dd/yyyy" required>
                             </div>
                             <div class="form-group">
-                                <label for="studentGender">Gender</label>
+                                <label for="studentGender">Gender<span class="text-danger">*</span></label>
                                 <div class="form-control" name="gender" id="studentGender">
                                     <div class="form-check form-check-inline pr-2">
                                         <input class="form-check-input" type="radio" name="gender" id="gender_f" value="Female" checked>
@@ -140,19 +140,15 @@
                         <!-- Student Contact Information -->
                         <div id="studentContactInfo">
                             <div class="form-group">
-                                <label for="studentEmail">Email address</label>
+                                <label for="studentEmail">Email address<span class="text-danger">*</span></label>
                                 <input type="email" name="student_email" class="form-control" id="studentEmail" placeholder="name@example.com" required>
                             </div>
                             <div class="form-group">
-                                <label for="studentPhone">Student's Mobile Number</label>
+                                <label for="studentPhone">Student's Mobile Number<span class="text-danger">*</span></label>
                                 <input type="number" name="student_mobile_number" class="form-control" id="studentPhone" min=1000000000 max=9999999999 required>
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="studentPhone2">Alternate Mobile Number</label>
-                                <input type="number" name="student_alternate_number" class="form-control" id="studentPhone2" placeholder="0000000000">
-                            </div> -->
                             <div class="form-group">
-                                <label for="studentCategory">Category</label>
+                                <label for="studentCategory">Category<span class="text-danger">*</span></label>
                                 <div class="form-control" name="category" id="studentCategory">
                                     <div class="form-check form-check-inline pr-2">
                                         <input class="form-check-input" type="radio" name="category" id="category_General" value="General" checked>
@@ -173,7 +169,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="studentPC">Physically Challenged</label>
+                                <label for="studentPC">Physically Challenged<span class="text-danger">*</span></label>
                                 <div class="form-control" name="physically_challenged" id="studentPC">
                                     <div class="form-check form-check-inline pr-2">
                                         <input class="form-check-input" type="radio" name="physically_challenged" id="pc_Y" value="Yes">
@@ -192,11 +188,11 @@
                             <!-- SSC -->
                             <div id="sscInfo">
                                 <div class="form-group">
-                                    <label for="sscSchool">School Name (10th Class)</label>
+                                    <label for="sscSchool">School Name (10th Class)<span class="text-danger">*</span></label>
                                     <input type="text" name="ssc_school_name" class="form-control" id="sscSchool" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="sscBoard">10th Board</label>
+                                    <label for="sscBoard">10th Board<span class="text-danger">*</span></label>
                                     <div class="form-control" id="sscBoard">
                                         <div class="form-check form-check-inline pr-2">
                                             <input class="form-check-input" type="radio" name="ssc_board" id="ssc_board1" value="CBSE" checked>
@@ -213,11 +209,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="sscPercentage">10th Board Marks(in Percentage)</label>
+                                    <label for="sscPercentage">10th Board Marks(in Percentage)<span class="text-danger">*</span></label>
                                     <input type="number" name="ssc_marks" class="form-control" id="sscPercentage" placeholder="00" min=0 max=100 required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="sscYop">Year of Passing(10th)</label>
+                                    <label for="sscYop">Year of Passing(10th)<span class="text-danger">*</span></label>
                                     <input type="number" name="ssc_yop" class="form-control" id="sscYop" onchange="yopMinMax();" required>
                                 </div>
                             </div>
@@ -257,7 +253,7 @@
                             <!-- Diploma(If applicable) (for Engineering i.e. CDGI)-->
                             <div id="diplomaInfo">
                                 <div class="form-group">
-                                    <label for="diploma">Diploma</label>
+                                    <label for="diploma">Diploma<span class="text-danger">*</span></label>
                                     <div class="form-control" id="diploma">
                                         <div class="form-check form-check-inline pr-2">
                                             <input class="form-check-input" type="radio" name="diploma_done" id="diploma_done1" value="Yes" onchange='isDiplomaDone();' checked>
@@ -270,43 +266,43 @@
                                     </div>
                                 </div>
                                 <!-- If Diploma is yes -->
-                                    <div class="form-group">
-                                        <label for="diplomaCollege">College Name (Diploma)</label>
-                                        <input type="text" name="diploma_school_name" class="form-control" id="diplomaCollege"> 
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="diplomaBoard">Diploma Board</label>
-                                        <div class="form-control" id="diplomaBoard">
-                                            <div class="form-check form-check-inline pr-2">
-                                                <input class="form-check-input" type="radio" name="diploma_board" id="diploma_board1" value="CBSE" checked>
-                                                <label class="form-check-label" for="diploma_board1">CBSE</label>
-                                            </div>
-                                            <div class="form-check form-check-inline pr-3">
-                                                <input class="form-check-input" type="radio" name="diploma_board" id="diploma_board2" value="MP">
-                                                <label class="form-check-label" for="diploma_board2">MP</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="diploma_board" id="diploma_board3" value="Others">
-                                                <label class="form-check-label" for="diploma_board3">Others</label>
-                                            </div>
+                                <div class="form-group">
+                                    <label for="diplomaCollege">College Name (Diploma)</label>
+                                    <input type="text" name="diploma_school_name" class="form-control" id="diplomaCollege"> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="diplomaBoard">Diploma Board</label>
+                                    <div class="form-control" id="diplomaBoard">
+                                        <div class="form-check form-check-inline pr-2">
+                                            <input class="form-check-input" type="radio" name="diploma_board" id="diploma_board1" value="CBSE" checked>
+                                            <label class="form-check-label" for="diploma_board1">CBSE</label>
+                                        </div>
+                                        <div class="form-check form-check-inline pr-3">
+                                            <input class="form-check-input" type="radio" name="diploma_board" id="diploma_board2" value="MP">
+                                            <label class="form-check-label" for="diploma_board2">MP</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="diploma_board" id="diploma_board3" value="Others">
+                                            <label class="form-check-label" for="diploma_board3">Others</label>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="diplomaPercentage">Diploma Marks(in Percentage)</label>
-                                        <input type="number" name="diploma_marks" class="form-control" id="diplomaMarks" placeholder="00" min=0 max=100>
-                                    </div>
-                                    <!-- Single selection diploma branch -->
-                                    <div class="form-group">
-                                        <label for="diplomaBranch">Diploma Branch</label>
-                                        <select class="form-control" name="diploma_branch" id="diplomaBranch">
-                                            <option>Computer Science (CS)</option>
-                                            <option>Informaton Technology (IT)</option>
-                                            <option>Civil (CE)</option>
-                                            <option>Mechanical (ME)</option>
-                                            <option>Electronics and Communication (EC)</option>
-                                            <option>Electrical (EE)</option>
-                                        </select>
-                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="diplomaPercentage">Diploma Marks(in Percentage)</label>
+                                    <input type="number" name="diploma_marks" class="form-control" id="diplomaMarks" placeholder="00" min=0 max=100>
+                                </div>
+                                <!-- Single selection diploma branch -->
+                                <div class="form-group">
+                                    <label for="diplomaBranch">Diploma Branch</label>
+                                    <select class="form-control" name="diploma_branch" id="diplomaBranch">
+                                        <option>Computer Science (CS)</option>
+                                        <option>Informaton Technology (IT)</option>
+                                        <option>Civil (CE)</option>
+                                        <option>Mechanical (ME)</option>
+                                        <option>Electronics and Communication (EC)</option>
+                                        <option>Electrical (EE)</option>
+                                    </select>
+                                </div>
                             </div>    
 
                             <!-- IIT JEE (for Engineering i.e. CDGI)-->
@@ -325,10 +321,10 @@
                                     </div>
                                 </div>
                                 <!-- If IIT JEE is yes -->
-                                    <div class="form-group">
-                                        <label for="iitJeeMarks">IIT JEE Marks</label>
-                                        <input type="number" name="iit_jee_marks" class="form-control" id="iitJeeMarks" placeholder="000" min=0 max=360>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="iitJeeMarks">IIT JEE Marks</label>
+                                    <input type="number" name="iit_jee_marks" class="form-control" id="iitJeeMarks" placeholder="000" min=0 max=360>
+                                </div>
                             </div>
                         </div>
 
@@ -348,17 +344,13 @@
                     <!-- Family Information -->
                     <div id="familyInfo">
                         <div class="form-group">
-                            <label for="fatherName">Father's Name</label>
+                            <label for="fatherName">Father's Name<span class="text-danger">*</span></label>
                             <input type="text" name="father_name" class="form-control" id="fatherName" required>
                         </div>
                         <div class="form-group">
-                            <label for="fatherPhone">Father's Mobile Number</label>
+                            <label for="fatherPhone">Father's Mobile Number<span class="text-danger">*</span></label>
                             <input type="number" name="father_mobile_number" class="form-control" id="fatherPhone" min=1000000000 max=9999999999 required>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="exampleFormControlInput1">Alternate Mobile Number</label>
-                            <input type="number" class="form-control" id="studentPhone2" placeholder="0000000000">
-                        </div> -->
                         <div class="form-group">
                             <label for="fatherOccupation">Father's Occupation</label>
                             <input type="text" name="occupation" class="form-control" id="fatherOccupation">
@@ -368,11 +360,11 @@
                             <input type="number" name="annual_income" class="form-control" id="fatherAnnualIncome">
                         </div>
                         <div class="form-group">
-                            <label for="motherName">Mother's Name</label>
+                            <label for="motherName">Mother's Name<span class="text-danger">*</span></label>
                             <input type="text" name="mother_name" class="form-control" id="motherName" required>
                         </div>
                         <div class="form-group">
-                            <label for="motherPhone">Mother's Mobile Number</label>
+                            <label for="motherPhone">Mother's Mobile Number<span class="text-danger">*</span></label>
                             <input type="number" name="mother_mobile_number" class="form-control" id="motherPhone" min=1000000000 max=9999999999 required>
                         </div>
                     </div>
@@ -380,7 +372,7 @@
                     <!-- Agent, Self or Others Information -->
                     <div id="agentInfo">
                         <div class="form-group">
-                            <label for="throughAgent">Through Agent</label>
+                            <label for="throughAgent">Through Agent<span class="text-danger">*</span></label>
                             <div class="form-control" id="throughAgent">
                                 <div class="form-check form-check-inline pr-2">
                                     <input class="form-check-input" type="radio" name="through_agent" id="through_agent1" value="Yes" onchange='isAgentYes();'>
@@ -393,14 +385,14 @@
                             </div>
                         </div>
                         <!-- If through Agent is yes -->
-                            <div class="form-group">
-                                <label for="agentName">Agent's Name</label>
-                                <input type="text" name="agent_name" class="form-control" id="agentName">
-                            </div>
-                            <div class="form-group">
-                                <label for="agentPhone">Agent's Mobile Number</label>
-                                <input type="number" name="agent_mobile_number" class="form-control" id="agentPhone" min=1000000000 max=9999999999>
-                            </div>
+                        <div class="form-group">
+                            <label for="agentName">Agent's Name</label>
+                            <input type="text" name="agent_name" class="form-control" id="agentName">
+                        </div>
+                        <div class="form-group">
+                            <label for="agentPhone">Agent's Mobile Number</label>
+                            <input type="number" name="agent_mobile_number" class="form-control" id="agentPhone" min=1000000000 max=9999999999>
+                        </div>
                         <!-- If through agent is no -->
                         <div class="form-group">
                             <label for="throughWhom">Through Whom?</label>
@@ -416,44 +408,44 @@
                             </div>
                         </div>
                         <!-- If through others -->
-                            <div class="form-group">
-                                <label for="otherPersonName">Person's Name</label>
-                                <input type="text" name="other_person_name" class="form-control" id="otherPersonName">
-                            </div>
-                            <div class="form-group">
-                                <label for="otherPersonRelation">Relation</label>
-                                <input type="text" name="other_person_relation" class="form-control" id="otherPersonRelation">
-                            </div>
-                            <div class="form-group">
-                                <label for="otherPersonInCGI">Is this person studying in CDGI,CDIP or CDIPS?</label>
-                                <div class="form-control" id="otherPersonInCGI">
-                                    <div class="form-check form-check-inline pr-2">
-                                        <input class="form-check-input" type="radio" name="other_person_same_college" id="other_person_same_college1" value="Yes">
-                                        <label class="form-check-label" for="other_person_same_college1">Yes</label>
-                                    </div>
-                                    <div class="form-check form-check-inline pr-3">
-                                        <input class="form-check-input" type="radio" name="other_person_same_college" id="other_person_same_college2" value="No">
-                                        <label class="form-check-label" for="other_person_same_college2">No</label>
-                                    </div>
+                        <div class="form-group">
+                            <label for="otherPersonName">Person's Name</label>
+                            <input type="text" name="other_person_name" class="form-control" id="otherPersonName">
+                        </div>
+                        <div class="form-group">
+                            <label for="otherPersonRelation">Relation</label>
+                            <input type="text" name="other_person_relation" class="form-control" id="otherPersonRelation">
+                        </div>
+                        <div class="form-group">
+                            <label for="otherPersonInCGI">Is this person studying in CDGI,CDIP or CDIPS?</label>
+                            <div class="form-control" id="otherPersonInCGI">
+                                <div class="form-check form-check-inline pr-2">
+                                    <input class="form-check-input" type="radio" name="other_person_same_college" id="other_person_same_college1" value="Yes">
+                                    <label class="form-check-label" for="other_person_same_college1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline pr-3">
+                                    <input class="form-check-input" type="radio" name="other_person_same_college" id="other_person_same_college2" value="No">
+                                    <label class="form-check-label" for="other_person_same_college2">No</label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="instituteInfoSource">How did you come to know about our Institute?</label>
-                                <select class="form-control" name="institute_info_src" id="instituteInfoSource">
-                                    <option>Electronics(Social Media)</option>
-                                    <option>Newspaper</option>
-                                    <option>Olympiad</option>
-                                    <option>Science Model Camp</option>
-                                    <option>Campus Visit</option>
-                                    <option>CDGI Website</option>
-                                    <option>Others</option>
-                                </select>
-                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="instituteInfoSource">How did you come to know about our Institute?<span class="text-danger">*</span></label>
+                            <select class="form-control" name="institute_info_src" id="instituteInfoSource">
+                                <option>Electronics(Social Media)</option>
+                                <option>Newspaper</option>
+                                <option>Olympiad</option>
+                                <option>Science Model Camp</option>
+                                <option>Campus Visit</option>
+                                <option>CDGI Website</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <!-- Engineering Branch admitted to i.e Admission in CDGI(Chameli Devi Group of Institutes) -->
                     <div class="form-group">
-                        <label for="engineeringBranch1">Engineering Branch Preference 1</label>
+                        <label for="engineeringBranch1">Engineering Branch Preference 1<span class="text-danger">*</span></label>
                         <select class="form-control" name="current_course" id="engineeringBranch1">
                             <option>Computer Science (CS)</option>
                             <option>Informaton Technology (IT)</option>
@@ -464,7 +456,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="engineeringBranch2">Engineering Branch Preference 2</label>
+                        <label for="engineeringBranch2">Engineering Branch Preference 2<span class="text-danger">*</span></label>
                         <select class="form-control" name="current_course_2" id="engineeringBranch2">
                             <option>Computer Science (CS)</option>
                             <option>Informaton Technology (IT)</option>
@@ -475,7 +467,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="engineeringBranch3">Engineering Branch Preference 3</label>
+                        <label for="engineeringBranch3">Engineering Branch Preference 3<span class="text-danger">*</span></label>
                         <select class="form-control" name="current_course_3" id="engineeringBranch3">
                             <option>Computer Science (CS)</option>
                             <option>Informaton Technology (IT)</option>
@@ -485,6 +477,14 @@
                             <option>Electrical (EE)</option>
                         </select>
                     </div>
+
+                    <!-- Remarks -->
+                    <div class="form-group">
+                        <label for="remarks">Any Remarks</label>
+                        <textarea name="remarks" rows=2 class="form-control" id="remarks"></textarea>
+                    </div>
+                    
+                    <!--Submit and Back Buttons -->
                     <div class="row mt-4">
                         <div class="offset-4 col-2 text-right">
                             <button type="submit" class="btn btn-primary btn-block" name="registerCDGI">Register</button>

@@ -34,7 +34,9 @@
                         <a href="home.php" class="btn btn-primary btn-lg btn-block">Home</a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="<?php echo $_SESSION['field'];?>RegistrationForm.php" class="btn btn-primary btn-lg btn-block"><?php echo $_SESSION['field']; ?> Registration</a>
+                        <form action="register.php" method="post">
+                            <button type='submit' class="btn btn-primary btn-lg btn-block" name="register<?php echo $_SESSION['field'];?>"><?php echo $_SESSION['field']; ?> Registration</button>
+                        </form>
                     </div>
                 <?php else: ?>
                     <div class="offset-sm-4 col-sm-4">
