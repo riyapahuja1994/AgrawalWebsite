@@ -52,9 +52,6 @@
         var diplomaDone = $('input[name="diploma_done"]:checked').val();
         if(diplomaDone == "Yes")
         {
-            $('#iitJeeMarks').prop('required',false);
-            $('input[name="iit_jee_appeared"]').prop('required',false);
-            $('#iit_jee_appearedN').prop({disabled:false});
             $('#diplomaCollege').prop({disabled:false, required:true});
             $('#diplomaMarks').prop({disabled:false, required:true});
             $('#diplomaBranch').prop({disabled:false, required:true});
@@ -62,9 +59,6 @@
         }
         else
         {
-            $('#iit_jee_appearedY').prop({checked:true});
-            $('#iit_jee_appearedN').prop({disabled:true});
-            $('#iitJeeMarks').prop({required:true});
             $('#diplomaCollege').prop('disabled',true);
             $('#diplomaMarks').prop('disabled',true);
             $('#diplomaBranch').prop('disabled',true);
