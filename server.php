@@ -191,6 +191,7 @@
         }
         else if(isset($_POST['registerCDGI']))
         {
+            $iit_jee_appeared = '';
             $diploma_done = mysqli_real_escape_string($db,$_POST['diploma_done']);   
             $diploma_school_name = mysqli_real_escape_string($db,$_POST['diploma_school_name']);
             $diploma_board = mysqli_real_escape_string($db,$_POST['diploma_board']);
