@@ -220,11 +220,11 @@
                         <div id="studentOtherInfo">
                             <div class="form-group">
                                 <label for="aadharNumber">Aadhar Number</label>
-                                <input type="number" name="aadhar_number" class="form-control" id="aadharNumber" required min=100000000000 max=999999999999>
+                                <input type="number" name="aadhar_number" class="form-control" id="aadharNumber" min=100000000000 max=999999999999>
                             </div>
                             <div class="form-group">
                                 <label for="samagrahaId">Samagraha ID</label>
-                                <input type="number" name="samagraha_id" class="form-control" id="samagrahaId" required min=100000000 max=999999999>
+                                <input type="number" name="samagraha_id" class="form-control" id="samagrahaId" min=100000000 max=999999999>
                             </div>
                         </div>
                     </div>
